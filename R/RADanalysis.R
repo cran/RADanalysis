@@ -40,7 +40,6 @@
 #'
 #' @source Saeedghalati et al. 2016 "Quantitative comparison of abundance structures of genetic communities", submitted
 #'
-#' @docType package
 #' @name RADanalysis
 NULL
 

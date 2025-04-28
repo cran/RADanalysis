@@ -4,8 +4,15 @@
 \alias{RADnormalization}
 \title{Normalizes an abundance vector to the desired number of ranks.}
 \usage{
-RADnormalization(input, max_rank, average_over = 1, min_rank = 1,
-  labels = FALSE, count_data = TRUE, method = "upperlimit")
+RADnormalization(
+  input,
+  max_rank,
+  average_over = 1,
+  min_rank = 1,
+  labels = FALSE,
+  count_data = TRUE,
+  method = "upperlimit"
+)
 }
 \arguments{
 \item{input}{A vector which contains the abundance values (an abundance vector).}
@@ -70,4 +77,3 @@ legend("bottomleft",legend = c("Original RAD","possible norm rad","possible norm
          \code{\link{representative_point}} for study the representative of groups of samples in a multi-dimensional scaling plot,
          \code{\link{representative_RAD}} for study the representative of group of norm rads.
 }
-

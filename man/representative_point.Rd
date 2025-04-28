@@ -5,8 +5,14 @@
 \title{Computes representative point based on the coordinates of points which are in
     the same group.}
 \usage{
-representative_point(input, ids = NULL, coord_names = c(1, 2),
-  standard_error_mean = TRUE, plot = FALSE, ...)
+representative_point(
+  input,
+  ids = NULL,
+  coord_names = c(1, 2),
+  standard_error_mean = TRUE,
+  plot = FALSE,
+  ...
+)
 }
 \arguments{
 \item{input}{A matrix which contains the coordinates of samples. Usually this is the
@@ -64,7 +70,7 @@ mds <- cmdscale(d = d,k = 5,eig = TRUE)
 #plot the points
 plot(mds$points,xlab = "First coordinate",ylab = "Second coordinate",pch = 19,cex =1,
     col = line_cols[sample_classes],
-    main = "MDS plot with representative points \\n of each group and error bars")
+    main = "MDS plot with representative points \n of each group and error bars")
 
 #add the representative points wit erorr bar to the previous plot
 a <- representative_point(input = mds$points,ids = which(sample_classes == 1),
@@ -86,4 +92,3 @@ legend("bottomleft",bty = "n",legend = c("pre Cp","under Cp","post Cp"),
          \code{\link{RADnormalization_matrix}} for normalize an entire otutable,
          \code{\link{representative_RAD}} for study the representative of group of norm rads.
 }
-

@@ -4,7 +4,9 @@
 \name{gut_nrads}
 \alias{gut_nrads}
 \title{Result of normalization of gut_otu_table with \code{max_rank = 400} and \code{average_over = 2000}.}
-\format{Contain the result of \code{\link{RADnormalization_matrix}(input = gut_otu_table,max_rank = 400,average_over = 2000)}}
+\format{
+Contain the result of \code{\link{RADnormalization_matrix}(input = gut_otu_table,max_rank = 400,average_over = 2000)}
+}
 \usage{
 data(gut_nrads)
 }
@@ -30,4 +32,3 @@ points 1 and 2 are considered pre-Cp, points 3 are considered under-Cp and point
 order of rows are similar to gut_otu_table
 }
 \keyword{datasets}
-

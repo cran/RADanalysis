@@ -4,8 +4,15 @@
 \alias{representative_RAD}
 \title{Computes representative normalized RAD of a group of normalized RADs.}
 \usage{
-representative_RAD(norm_rad, sample_ids = NULL, plot = F, min_rank = 1,
-  confidence = 0.95, with_conf = TRUE, ...)
+representative_RAD(
+  norm_rad,
+  sample_ids = NULL,
+  plot = FALSE,
+  min_rank = 1,
+  confidence = 0.95,
+  with_conf = TRUE,
+  ...
+)
 }
 \arguments{
 \item{norm_rad}{A matrix which contains the normalized RADs (samples in rows).}
@@ -89,4 +96,3 @@ col = line_cols,lwd = 3)
          \code{\link{RADnormalization_matrix}} for normalize an entire otutable,
          \code{\link{representative_point}} for study the representative of groups of samples in a multi-dimensional scaling plot,
 }
-

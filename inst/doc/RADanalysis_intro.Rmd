@@ -44,7 +44,7 @@ plot(rad,xlab = "Rank",ylab = "Abundance",pch = 19,log = "xy",type = "b",lwd = 0
 ```
 
 ## RAD example: gut microbiome under treatment with antibiotic (Dethlefsen et al. 2008)
-Dethlefsen et al. 2008 (http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0060280) have treated healthy individuals with the antibiotic Ciprofloxacin (Cp) and monitored the states of the gut microbiome before the treatment, during the treatment, and some time after the treatment. We will analyse their data using RADs.
+Dethlefsen et al. 2008 ( https://journals.plos.org:443/plosbiology/article?id=10.1371/journal.pbio.0060280) have treated healthy individuals with the antibiotic Ciprofloxacin (Cp) and monitored the states of the gut microbiome before the treatment, during the treatment, and some time after the treatment. We will analyse their data using RADs.
 
 ### Reading the data
 In order to use the data you should first load the package. It is contained in the package as OTU table (OTU = operational taxonomic unit). In the following you can see the first $10$ columns of the data. 

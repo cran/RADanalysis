@@ -4,9 +4,17 @@
 \alias{RADnormalization_matrix}
 \title{Normalizes an abundance table to the desired number of ranks}
 \usage{
-RADnormalization_matrix(input, max_rank, average_over = 1, min_rank = 1,
-  labels = FALSE, count_data = TRUE, sample_in_row = TRUE,
-  method = "upperlimit", verbose = T)
+RADnormalization_matrix(
+  input,
+  max_rank,
+  average_over = 1,
+  min_rank = 1,
+  labels = FALSE,
+  count_data = TRUE,
+  sample_in_row = TRUE,
+  method = "upperlimit",
+  verbose = TRUE
+)
 }
 \arguments{
 \item{input}{A vector or matrix which contains the abundance values (an abundance table).}
@@ -63,7 +71,7 @@ nrads <- nrads$norm_matrix
 
 plot(1,xlim = c(1,400),ylim = c(4e-5,1),col = "white",log  = "xy",
      xlab = "Rank",ylab = "Abundance",
-     main = "NRADs from antibiotic data set with R = 400 \\n with average_over = 20")
+     main = "NRADs from antibiotic data set with R = 400 \n with average_over = 20")
 for(i in 1:nrow(nrads)){
     lines(x = nrads[i,],lwd = 2,col = line_cols[sample_classes[i]])
 }
@@ -74,4 +82,3 @@ legend("bottomleft",bty = "n",legend = c("pre Cp","under Cp","post Cp"),col = li
          \code{\link{representative_point}} for study the representative of groups of samples in a multi-dimensional scaling plot,
          \code{\link{representative_RAD}} for study the representative of group of norm rads.
 }
-

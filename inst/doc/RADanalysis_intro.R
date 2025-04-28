@@ -1,8 +1,8 @@
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 #install.packages("RADanalysis")
 library(RADanalysis)
 
-## ---- echo=TRUE, results='asis',fig.cap="rank"---------------------------
+## ---- echo=TRUE, results='asis',fig.cap="rank"--------------------------------
 rad <- data.frame(rank = 1:100, abundance = round(1./(1:100) * 100))
 knitr::kable(head(rad, 10))
 
@@ -12,7 +12,7 @@ plot(rad,xlab = "Rank",ylab = "Abundance",pch = 19,type = "b",lwd = 0.5)
 ## ---- fig.show='hold',fig.width=5,fig.height=5,fig.cap="A typical Rank Abundance Distribution in log-log scale"----
 plot(rad,xlab = "Rank",ylab = "Abundance",pch = 19,log = "xy",type = "b",lwd = 0.5)
 
-## ---- echo=TRUE, results='asis',fig.cap="rank"---------------------------
+## ---- echo=TRUE, results='asis',fig.cap="rank"--------------------------------
 library(RADanalysis)
 data("gut_otu_table")
 

@@ -4,7 +4,9 @@
 \name{gut_otu_table}
 \alias{gut_otu_table}
 \title{Abundance table of gut microbiome.}
-\format{A matrix with 18 rows and 5670 columns.}
+\format{
+A matrix with 18 rows and 5670 columns.
+}
 \source{
 Dethlefsen, Les, et al. "The pervasive effects of an antibiotic on the human gut microbiota, as revealed by
  deep 16S rRNA sequencing." PLoS biol 6.11 (2008): e280.
@@ -35,4 +37,3 @@ antibiotic. Each row is the abundance of gut microbiome for one sample. The row 
 points 1 and 2 are considered pre-Cp, points 3 are considered under-Cp and point 4 and 5 are considered post-Cp.
 }
 \keyword{datasets}
-

@@ -63,7 +63,7 @@
 #' col = line_cols,lwd = 3)
 #'
 #' @export representative_RAD
-representative_RAD <- function(norm_rad,sample_ids = NULL,plot = F,min_rank = 1,confidence = 0.95,with_conf = TRUE,...){
+representative_RAD <- function(norm_rad,sample_ids = NULL,plot = FALSE,min_rank = 1,confidence = 0.95,with_conf = TRUE,...){
     if (is.null(sample_ids)) sample_ids <- 1:(dim(norm_rad)[1])
     if (length(sample_ids) == 0) return(NULL)
     if (length(sample_ids) == 1) sample_ids <- c(sample_ids,sample_ids)
@@ -187,7 +187,7 @@ representative_point <- function(input,ids = NULL,coord_names = c(1,2),standard_
             }
 
         }else{
-            print("Only two dimensional plot is accepted")
+            message("Only two dimensional plot is accepted")
         }
     }
     result <- list(m,s,e)

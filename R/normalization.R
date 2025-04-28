@@ -54,7 +54,7 @@ RADnormalization <- function(input,max_rank,average_over = 1,min_rank = 1,labels
     ## known bug: for the very special case of something like pool = c(1,2,5,6,3,2,1,5,4,2,1,5,125) (last one a new one) when we want to norm to original richness it does not work
     if(!(method %in% c("upperlimit","lowerlimit","middle"))) stop("method must one of: lowerlimit, middle or upperlimit")
     input <- as.vector(input)
-    if(labels == T){if(average_over>1){average_over <- 1;print(paste("average_over changed to 1 because labels set to TRUE."));}}
+    if(labels == TRUE){if(average_over>1){average_over <- 1;message(paste("average_over changed to 1 because labels set to TRUE."));}}
     #input must be a vector of integers
 
     if(!count_data) {
@@ -70,9 +70,9 @@ RADnormalization <- function(input,max_rank,average_over = 1,min_rank = 1,labels
     individual.pool <- non_zero_ids[rep(1:length(non_zero_ids),input_without_zeros)]
 
     if((length(non_zero_ids) == max_rank) && (method == "upperlimit")){
-        if(labels == T){
+        if(labels == TRUE){
             s_pool <- individual.pool
-            new.otutable <- sort(table(s_pool),decreasing = T)
+            new.otutable <- sort(table(s_pool),decreasing = TRUE)
             norm_rad_count <- cbind(as.integer(rownames(new.otutable)),as.vector(new.otutable))
             colnames(norm_rad_count) <- c("label_ids","Abundance")
             Abundance <- norm_rad_count[min_rank:max_rank,2] / sum(norm_rad_count[min_rank:max_rank,2])
@@ -85,7 +85,7 @@ RADnormalization <- function(input,max_rank,average_over = 1,min_rank = 1,labels
             return(out)
 
         }else{
-            norm_rad_count <- sort(input,decreasing = T)[1:max_rank]
+            norm_rad_count <- sort(input,decreasing = TRUE)[1:max_rank]
             norm_rad <- norm_rad_count[min_rank:max_rank] / sum(norm_rad_count[min_rank:max_rank])
             norm_rad_mean_sd <- NA
             inputs <- list(input,min_rank,max_rank,average_over,labels,method)
@@ -155,14 +155,14 @@ RADnormalization <- function(input,max_rank,average_over = 1,min_rank = 1,labels
         ### COMPUTE NORM RAD
         norm_pool <- s_pool[1:mark]
         norm_table <- table(norm_pool)
-        abundance <- sort(as.vector(norm_table),decreasing = T)
+        abundance <- sort(as.vector(norm_table),decreasing = TRUE)
         norm_rad_count <- rbind(norm_rad_count,abundance)
     }
 
 
     #prepare the result and return them
-    if(labels == T){
-        new.otutable <- sort(table(s_pool),decreasing = T)
+    if(labels == TRUE){
+        new.otutable <- sort(table(s_pool),decreasing = TRUE)
         norm_rad_count <- cbind(as.integer(rownames(new.otutable)),as.vector(new.otutable))
         colnames(norm_rad_count) <- c("label_ids","Abundance")
         Abundance <- norm_rad_count[min_rank:max_rank,2] / sum(norm_rad_count[min_rank:max_rank,2])
@@ -250,7 +250,7 @@ RADnormalization <- function(input,max_rank,average_over = 1,min_rank = 1,labels
 #'          \code{\link{representative_RAD}} for study the representative of group of norm rads.
 #' @import scales sfsmisc
 
-RADnormalization_matrix <- function(input,max_rank,average_over = 1,min_rank = 1,labels = FALSE,count_data = TRUE,sample_in_row = TRUE, method = "upperlimit",verbose = T) {
+RADnormalization_matrix <- function(input,max_rank,average_over = 1,min_rank = 1,labels = FALSE,count_data = TRUE,sample_in_row = TRUE, method = "upperlimit",verbose = TRUE) {
     if(!sample_in_row) input <- t(input)
     if(is.null(dim(input))) return(RADnormalization(input = input,max_rank = max_rank,average_over = average_over,min_rank = min_rank,labels = labels,count_data = count_data,method = method))
 
